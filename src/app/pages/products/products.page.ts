@@ -52,6 +52,7 @@ export class ProductsPage implements OnInit {
   // Add product
   addProduct(product: Product) {
     if (product.quantity_selected === '0') {
+      this.cartService.presentToast('Please select quantity');
       return;
     } else if (product.item_count <= 6) {
       this.cartService.addProduct(product);
